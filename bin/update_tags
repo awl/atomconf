@@ -1,0 +1,15 @@
+#!/bin/bash
+
+PYTHON_INSTALL_DIR=/usr/lib/python2.6
+
+export TTFMPATHS=""; for d in `find $TT_HOME -type d | grep -v .git | grep -v frontend`; do export TTFMPATHS=$d,$TTFMPATHS; done
+ctags -o ~/ttfm.tags `find $TT_HOME -name '*.py'`
+pushd $TT_HOME
+~/bin/pycscope.py -f ~/ttfm.cscope -R
+popd
+if [ "$1" == "-a" -a -n $PYTHON_INSTALL_DIR ]; then
+	pushd $PYTHON_INSTALL_DIR
+	ctags -o ~/py.tags `find $PYTHON_INSTALL_DIR -name '*.py'`
+	~/bin/pycscope.py -f ~/py.cscope -R
+	popd
+fi

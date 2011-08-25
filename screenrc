@@ -1,0 +1,3 @@
+defscrollback 100000
+scrollback 100000
+shelltitle '] |bash'

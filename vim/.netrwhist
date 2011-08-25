@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/atomly/pycscope-0.3'
+let g:netrw_dirhist_2='/home/atomly/dev/turntable-backend/frontend/static/js/roommanager'
+let g:netrw_dirhist_3='/home/atomly/dev/turntable-backend/backend'
